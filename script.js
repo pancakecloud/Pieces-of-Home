@@ -109,7 +109,7 @@ async function predictWebcam() {
       canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
       for (const landmark of result.landmarks) {
 
-        var nose = {x: landmark[0].x, y: landmark[0].y};
+        window.nose = {x: landmark[0].x, y: landmark[0].y};
         window.noseFound = true;
 
         drawingUtils.drawLandmarks(landmark, {
