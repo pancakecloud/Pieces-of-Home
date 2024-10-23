@@ -3,6 +3,10 @@
     position: absolute;
     z-index: 999;
   }
+  
+  #output_canvas, video {
+    display:none;
+  }
 </style>
 <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
 
@@ -62,18 +66,14 @@
           var nose = window.nose .x;
           
           if (nose > this.data.threshold) {
-            this.targetRotation = 180; // set target rotation to 300 degrees
+            this.targetRotation = 0; // set target rotation to 300 degrees
           } else {
-            this.targetRotation = 0; // set target rotation to 0 degrees
+            this.targetRotation = 180; // set target rotation to 0 degrees
           }
 
           // Apply exponential moving average to smooth the rotation
           this.currentRotation =
             this.currentRotation * 0.95 + this.targetRotation * 0.05;
-          console.log(this.targetRotation + " " + this.currentRotation);
-
-          // Set the new rotation to the entity
-          // this.el.object3D.rotation.y = THREE.Math.degToRad(this.currentRotation);?
 
           // Set the new rotation directly in degrees
           this.el.setAttribute("rotation", {
@@ -86,9 +86,12 @@
     </script>
 
     <a-entity nose></a-entity>
+    <a-camera position="0 0 0"></a-camera>
     
-    <a-entity rotation="90 0 0" position="0 1.5 -3">
-      <a-entity coin gltf-model="https://cdn.glitch.me/4d1e7f83-7113-4991-80d5-850464ae5b43/food%202.glb?v=1729693019340"></a-entity>
-    </a-entity>
+    
+<!--     <a-entity position="0 0 -5" coin="threshold:0.1" gltf-model="..."></a-entity> -->
+    <a-entity position="0 0 -5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
+    
+    
   </a-scene>
 </body>
