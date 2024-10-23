@@ -12,6 +12,7 @@
 // limitations under the License.
 
 window.nose = {x: -1, y: -1};
+window.noseFound = false;
 
 import {
   PoseLandmarker,
@@ -109,6 +110,7 @@ async function predictWebcam() {
       for (const landmark of result.landmarks) {
 
         var nose = {x: landmark[0].x, y: landmark[0].y};
+        window.noseFound = true;
 
         drawingUtils.drawLandmarks(landmark, {
           radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1),

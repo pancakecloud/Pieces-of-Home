@@ -1,18 +1,4 @@
-<!-- Copyright 2023 The MediaPipe Authors.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License. -->
-
-
+<script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
 
 <link
   href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
@@ -20,31 +6,55 @@ limitations under the License. -->
 />
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
-
 <body>
-
-
-    <div id="liveView" class="videoView">
-      <button id="webcamButton" class="mdc-button mdc-button--raised">
-        <span class="mdc-button__ripple"></span>
-        <span class="mdc-button__label">ENABLE WEBCAM</span>
-      </button>
-      <div style="position: relative">
-        <video
-          id="webcam"
-          style="width: 1280px; height: 720px; position: abso"
-          autoplay
-          playsinline
-        ></video>
-        <canvas
-          class="output_canvas"
-          id="output_canvas"
-          width="1280"
-          height="720"
-          style="position: absolute; left: 0px; top: 0px"
-        ></canvas>
-      </div>
+  <div id="liveView" class="videoView">
+    <button id="webcamButton" class="mdc-button mdc-button--raised">
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">ENABLE WEBCAM</span>
+    </button>
+    <div style="position: relative">
+      <video
+        id="webcam"
+        style="width: 1280px; height: 720px; position: abso"
+        autoplay
+        playsinline
+      ></video>
+      <canvas
+        class="output_canvas"
+        id="output_canvas"
+        width="1280"
+        height="720"
+        style="position: absolute; left: 0px; top: 0px"
+      ></canvas>
     </div>
+  </div>
 </body>
 
 <script type="module" src="/script.js"></script>
+
+<a-scene>
+  <script>
+    AFRAME.registerComponent("nose", {
+      tick: function () {
+        if (this.previous === undefined) {
+          this.previous = window.nose;
+          return;
+        }
+      },
+    });
+
+    AFRAME.registerComponent("coin", {
+      schema: {
+        threshold: { type: "number", default: 0.5 },
+      },
+      tick: function () {
+        
+        var nose = window.nose.x;
+      },
+    });
+  </script>
+
+  <a-entity nose></a-entity>
+
+  <a-box coin color="red" position="0 1.5 -4"></a-box>
+</a-scene>
