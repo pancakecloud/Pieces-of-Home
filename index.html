@@ -42,7 +42,10 @@
   <script type="module" src="/script.js"></script>
 
   <a-scene>
-    <script>
+   <script>
+     
+     const flipZone = 0.1; // percentage of screen where the coin flips
+     
       AFRAME.registerComponent("nose", {
         tick: function () {
           if (this.previous === undefined) {
@@ -63,9 +66,10 @@
         tick: function () {
           if (!window.noseFound) return;
 
-          var nose = window.nose .x;
+          //var nose = /1 - window.nose.x;
+          var distance = Math.abs(this.data.threshold - (1 - window.nose.x));
           
-          if (nose > this.data.threshold) {
+          if (distance < flipZone ) {
             this.targetRotation = 0; // set target rotation to 300 degrees
           } else {
             this.targetRotation = 180; // set target rotation to 0 degrees
@@ -86,11 +90,10 @@
     </script>
 
     <a-entity nose></a-entity>
-    <a-camera position="0 0 0"></a-camera>
-    
-    
-<!--     <a-entity position="0 0 -5" coin="threshold:0.1" gltf-model="..."></a-entity> -->
+    <a-camera position="0 0 0" look-controls="enabled: false" wasd-controls="enabled: false"></a-camera>
+    <a-entity position="-2 0 -5" coin="threshold:0.25" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
     <a-entity position="0 0 -5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
+    <a-entity position="2 0 -5" coin="threshold:0.75" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
     
     
   </a-scene>
