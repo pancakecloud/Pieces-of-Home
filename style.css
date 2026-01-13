@@ -194,3 +194,49 @@ h2 {
 .fileopener:hover {
   border-bottom:3px solid var(--color-secondary);
 }
+
+
+
+
+  #webcamButton {
+    position: absolute;
+    z-index: 999;
+  }
+  
+  #output_canvas, video {
+    display:none;
+  }
+  
+    #container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #container > div {
+    height: 180px;
+    /* background: grey; */
+    border: 1px solid white;
+    flex-grow: 1;
+  }
+
+  .animation {
+    height: 20px;
+    background: red;
+  }
+
+  .annotation {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .plane {
+    height: 40px;
+    /* background: yellow; */
+  }
+
+  h1,
+  h2 {
+    font-family: "fractul-variable", sans-serif;
+    font-variation-settings: "wght" 400;
+    margin: 0;
+  }

@@ -7,6 +7,42 @@
   #output_canvas, video {
     display:none;
   }
+  
+    #container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #container > div {
+    height: 180px;
+    /* background: grey; */
+    border: 1px solid white;
+    flex-grow: 1;
+  }
+
+  .animation {
+    height: 20px;
+    background: red;
+  }
+
+  .annotation {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .plane {
+    height: 40px;
+    /* background: yellow; */
+  }
+
+  h1,
+  h2 {
+    font-family: "fractul-variable", sans-serif;
+    font-variation-settings: "wght" 400;
+    margin: 0;
+  }
+  
+
 </style>
 <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
 
@@ -38,6 +74,150 @@
       ></canvas>
     </div>
   </div>
+
+
+<div id="container">
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>IND</span>
+      </div>
+    </div>
+    <h1>Indian Thalli</h1>
+    <h2>YMCA</h2>
+    <h2>1810</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>CHN</span>
+      </div>
+    </div>
+    <h1>Prawn & Chive Dumplings</h1>
+    <h2>DIMSUM DUCK</h2>
+    <h2>1907</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>ITL</span>
+      </div>
+    </div>
+    <h1>Ravioli Of Ricotta With Sage Butter</h1>
+    <h2>Padella</h2>
+    <h2>1945</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>CRB</span>
+      </div>
+    </div>
+    <h1>Jerk Chicken</h1>
+    <h2>Maureen's Brixton Kitchen</h2>
+    <h2>1948</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>NGA</span>
+      </div>
+    </div>
+    <h1>Suya Beef</h1>
+    <h2>Angels Bakery</h2>
+    <h2>1950</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>GRK</span>
+      </div>
+    </div>
+    <h1>Dolmades</h1>
+    <h2>Babinodas</h2>
+    <h2>1950-60</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>TK</span>
+      </div>
+    </div>
+    <h1>Lamb adana kebab</h1>
+    <h2>Gokyuzu</h2>
+    <h2>1950-1960</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>PTG</span>
+      </div>
+    </div>
+    <h1>Lulas Grelhadas</h1>
+    <h2>Grelha D'ouro</h2>
+    <h2>1960-70</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>BGD</span>
+      </div>
+    </div>
+    <h1>Chingri Malai Curry</h1>
+    <h2>Kolapata</h2>
+    <h2>1970</h2>
+  </div>
+
+  <div>
+    <div class="plane">
+      <div class="animation"></div>
+      <div class="annotation">
+        <span>LND</span>
+        <span>&rarr;</span>
+        <span>KRN</span>
+      </div>
+    </div>
+    <h1>Tteokbokki</h1>
+    <h2>Kang Nam</h2>
+    <h2>1990</h2>
+  </div>
+</div>
+
 
   <script type="module" src="/script.js"></script>
 
@@ -90,17 +270,17 @@
     </script>
 
     <a-entity nose></a-entity>
-    <a-camera position="0 0 0" look-controls="enabled: false" wasd-controls="enabled: false"></a-camera>
-    <a-entity position="-6 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.25" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="-3.9 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="-2.8 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="-1.7 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="-0.55 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="0.6 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="1.7 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="2.8 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="3.9 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
-    <a-entity position="6 0 -5" scale="0.5 0.5 0.5" coin="threshold:0.75" gltf-model="https://cdn.glitch.global/4d1e7f83-7113-4991-80d5-850464ae5b43/food%20rotated%20final%20final%202.glb?v=1729695348895"></a-entity>
+    <a-camera position="0 0 2" fov="60" look-controls="enabled: false" wasd-controls="enabled: false"></a-camera>
+    <a-entity position="-5 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.25" gltf-model="models/1.glb"></a-entity>
+    <a-entity position="-3.9 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="models/2.glb"></a-entity>
+    <a-entity position="-2.8 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="models/3.glb"></a-entity>
+    <a-entity position="-1.7 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="models/4.glb"></a-entity>
+    <a-entity position="-0.55 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="models/5.glb"></a-entity>
+    <a-entity position="0.6 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="models/6.glb"></a-entity>
+    <a-entity position="1.7 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="models/7.glb"></a-entity>
+    <a-entity position="2.8 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="models/8.glb"></a-entity>
+    <a-entity position="3.9 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.5" gltf-model="models/9.glb"></a-entity>
+    <a-entity position="5 0 -7" scale="0.5 0.5 0.5" coin="threshold:0.75" gltf-model="models/10.glb"></a-entity>
     
     
   </a-scene>
